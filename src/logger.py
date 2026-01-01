@@ -1,4 +1,4 @@
-import logging
+import logging #Logging helps the program write messages like:“I started“,"Something went wrong”,“Everything is fine”
 import os
 from datetime import datetime
 

@@ -8,3 +8,8 @@ xgboost
 Flask
 
 #-e .
+
+
+#	You’re still working on the project
+
+#	You don’t want to reinstall it every time you change code
