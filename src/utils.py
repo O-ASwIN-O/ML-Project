@@ -5,7 +5,7 @@ import numpy as np
 import pandas as pd
 import dill
 import pickle
-from sklearn.metrics import r2_score
+from sklearn.metrics import r2_score #used for evaluating regression models
 from sklearn.model_selection import GridSearchCV
 
 from src.exception import CustomException
