@@ -1,1 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Score Predictor - Home</title>
+    <style>
+        * { box-sizing: border-box; margin:0; padding:0 }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0f1629 100%);
+            color: #e0e0e0; min-height:100vh; display:flex; align-items:center; justify-content:center;
+        }
+        body::before {
+            content:''; position:fixed; inset:0; z-index:0;
+            background: radial-gradient(circle at 20% 50%, rgba(0,255,200,0.03), transparent 40%), radial-gradient(circle at 80% 50%, rgba(0,100,255,0.03), transparent 40%);
+            pointer-events:none;
+        }
+        .container { position:relative; z-index:2; width:100%; max-width:980px; padding:40px; }
+        .header { text-align:center; margin-bottom:40px; }
+        .logo-icon { font-size:48px; background:linear-gradient(135deg,#00ffcc,#0088ff); -webkit-background-clip:text; -webkit-text-fill-color:transparent; filter:drop-shadow(0 0 10px rgba(0,255,200,0.35)); }
+        h1 { font-size:2.8rem; background:linear-gradient(135deg,#00ffcc 0%,#0088ff 50%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+        .subtitle { color:#b0b8cc; margin-top:8px; font-weight:300 }
+
+        .cta-card { background:rgba(20,25,50,0.55); backdrop-filter:blur(18px); border-radius:18px; padding:48px; border:1px solid rgba(0,255,200,0.12); box-shadow:0 20px 60px rgba(0,0,0,0.5); text-align:center }
+        .cta-description { color:#b0b8cc; margin-bottom:32px; line-height:1.6 }
+
+        .button-group { display:flex; gap:16px; justify-content:center; flex-wrap:wrap }
+        .btn { padding:14px 36px; border-radius:10px; font-weight:700; text-transform:uppercase; letter-spacing:0.6px; cursor:pointer; text-decoration:none; }
+        .btn-primary { background:linear-gradient(135deg,#00ffcc 0%,#00ff88 100%); color:#07111a; box-shadow:0 10px 30px rgba(0,255,200,0.35) }
+        .btn-primary:hover { transform:translateY(-3px); box-shadow:0 15px 40px rgba(0,255,200,0.55) }
+        .btn-secondary { background:transparent; border:2px solid #00ffcc; color:#00ffcc }
+
+        footer { margin-top:22px; text-align:center; color:#8b94b3; font-size:0.95rem }
+
+        @media (max-width:768px){ h1{font-size:2rem} .cta-card{padding:28px} .btn{width:100%} .button-group{flex-direction:column} }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo-icon">🎓</div>
+            <h1>Student Score Predictor</h1>
+            <div class="subtitle">AI-powered academic performance insights — fast, accurate, trustworthy</div>
+        </div>
+
+        <div class="cta-card">
+            <p class="cta-description">Unlock your predicted math score by providing a few details. Our AI gives a confident, data-driven estimate to guide your study priorities.</p>
+
+            <div class="button-group">
+                <a href="{{ url_for('predict_datapoint') }}" class="btn btn-primary">✨ Get Your Prediction</a>
+                <a href="#" class="btn btn-secondary">📚 Learn More</a>
+            </div>
+        </div>
+
+        <footer>Built with precision — trusted by learners</footer>
+    </div>
+</body>
+</html>
 <h1>Welcome to the home page</h1>
