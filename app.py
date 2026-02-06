@@ -53,7 +53,23 @@ def predict_datapoint():
             return render_template('home.html',results=results[0])
         except Exception as e:
             import traceback
-            error_msg = f"Error during prediction: {str(e)}\n{traceback.format_exc()}"
+            import os
+            
+            cwd = os.getcwd()
+            files_in_cwd = os.listdir(cwd)
+            artifacts_content = "artifacts folder not found"
+            if os.path.exists("artifacts"):
+                artifacts_content = str(os.listdir("artifacts"))
+            
+            error_msg = f"""Error during prediction: {str(e)}
+            
+            --- Debug Info ---
+            CWD: {cwd}
+            Files in CWD: {files_in_cwd}
+            Artifacts content: {artifacts_content}
+            Traceback:
+            {traceback.format_exc()}"""
+            
             print(error_msg)
             return f"<h1>Prediction Error</h1><pre>{error_msg}</pre>", 500
     
