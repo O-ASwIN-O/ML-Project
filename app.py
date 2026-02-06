@@ -13,12 +13,24 @@ app=application
 
 @app.route('/')
 def index():
-    return render_template('index.html') 
+    try:
+        return render_template('index.html')
+    except Exception as e:
+        import traceback
+        error_msg = f"Error in index route: {str(e)}\n{traceback.format_exc()}"
+        print(error_msg)
+        return f"<h1>Error</h1><pre>{error_msg}</pre>", 500 
 
 @app.route('/predictdata',methods=['GET','POST'])
 def predict_datapoint():
     if request.method=='GET':
-        return render_template('home.html')
+        try:
+            return render_template('home.html')
+        except Exception as e:
+            import traceback
+            error_msg = f"Error rendering home.html: {str(e)}\n{traceback.format_exc()}"
+            print(error_msg)
+            return f"<h1>Template Error</h1><pre>{error_msg}</pre>", 500
     else:
         data=CustomData(
             gender=request.form.get('gender'),
